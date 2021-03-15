@@ -51,7 +51,9 @@
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles -%}
+    <script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script>
     <link rel="stylesheet" href="{{ pathto(furo_assets['style'], 1) }}">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/styles/furo_dark.css', 1) }}">
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
     {% include "partials/_head_css_variables.html" with context %}

@@ -46,7 +46,8 @@ def docs_live(session):
         session.run(
             "sphinx-autobuild",
             # for sphinx-autobuild
-            "--port=0",
+            f"--host={os.getenv('LIVE_HOST', '127.0.0.1')}",
+            f"--port={os.getenv('LIVE_PORT', '0')}",
             "--watch=src/",
             f"--pre-build={build_command}",
             r"--re-ignore=src/.*/theme/furo/static/.*\.(css|js)",  # ignore the generated files
